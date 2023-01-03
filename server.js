@@ -21,10 +21,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // app.use(cors({origin: true, credentials: true}));
-var corsOptions = {
-  origin: "https://front-app-p7qd.onrender.com",
-};
-app.use(cors(corsOptions));
+// var corsOptions = {
+//   origin: "https://front-app-p7qd.onrender.com",
+// };
+app.use(cors());
 app.use(cookieParser());
 /* You need to actually serve the images that reside in your uploads folder. One way to do this is to use the express static middleware. Assuming your uploads folder resides in your app's root, you'd simply add to your express app:
 
