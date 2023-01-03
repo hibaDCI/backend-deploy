@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // app.use(cors({origin: true, credentials: true}));
 var corsOptions = {
-  origin: "http://example.com",
+  origin: "https://front-app-p7qd.onrender.com",
 };
 app.use(cors(corsOptions));
 app.use(cookieParser());
