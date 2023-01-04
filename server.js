@@ -98,5 +98,5 @@ app.use("/api/post", postRouters);
 //? CSRF
 
 app.listen(process.env.PORT || 5000, (req, res) => {
-  console.log("Server is listening for HTTP requests on port 5000");
+  console.log("Server is listening for HTTP requests on port ", PORT);
 });
