@@ -37,13 +37,15 @@ export const login = async (req, res) => {
     if (checkPassword) {
       //generate a token for the user using the authentication helper
       const token = await authenticationHelper.generateToken(user);
+      //! with header
+      // return res.header("x-auth", token).json({message: "you logged in"});
 
       //!with cookie
       return res
         .cookie("access_token", token, {
           httpOnly: true,
           secure: true,
-          // sameSite: "lax",
+          sameSite: "none",
         })
         .json({message: "you logged in"});
 

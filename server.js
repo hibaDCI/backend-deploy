@@ -22,9 +22,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 // app.use(cors({origin: true, credentials: true}));
 var corsOptions = {
-  // credential: true, //make sure the header is set
-  origin: "https://front-app-p7qd.onrender.com",
-  // origin: ["https://front-app-p7qd.onrender.com", "http://localhost:3001"],
+  origin: ["https://superuser.onrender.com"],
+  methods: ["GET", "PUT", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
+  credentials: true,
+  maxAge: 600,
+  exposedHeaders: ["*", "Authorization"],
 };
 app.use(cors(corsOptions));
 app.use(cookieParser());
