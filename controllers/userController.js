@@ -42,7 +42,7 @@ export const login = async (req, res) => {
       return res
         .cookie("access_token", token, {
           httpOnly: true,
-          secure: false,
+          secure: true,
           // sameSite: "lax",
         })
         .json({message: "you logged in"});
