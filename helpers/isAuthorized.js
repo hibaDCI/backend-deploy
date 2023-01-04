@@ -8,7 +8,7 @@ import {promisify} from "util"; // node js module
  */
 const isAuthorized = async (req, res, next) => {
   const token = req.cookies.access_token;
-
+  console.log("test token", token);
   if (!token) {
     return res.status(401).json({msg: "error not authorized"});
   }
